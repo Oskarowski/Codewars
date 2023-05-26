@@ -66,56 +66,28 @@ class VigenèreCipher
     }
 }
 
-
-$str = "it's a shift cipher!";
-$strArr = str_split($str);
-
-// ob_start();
-// var_dump($strArr);
-// $output = ob_get_clean();
-
-// $output = str_replace("\n", "<br>", $output); // Replace newlines with <br> tags
-// $output = str_replace(" ", "&nbsp;", $output); // Replace spaces with non-breaking spaces
-// $output = "<pre>$output</pre>"; // Wrap output in <pre> tags
-
-// echo $output;
+$lower = new VigenèreCipher('password', 'abcdefghijklmnopqrstuvwxyz');
+echo "<br>" . $lower->encode("it's a shift cipher!") . "<br>";
+echo $lower->decode("xt'k o vwixl qzswej!") . "<br>";
 
 
-$c = new VigenèreCipher('password', 'abcdefghijklmnopqrstuvwxyz');
-echo "<br>" . $c->encode("it's a shift cipher!") . "<br>";
-echo $c->decode("xt'k o vwixl qzswej!") . "<br>";
+echo "<br>" . $lower->encode('codewars') . "<br>"; // 'rovwsoiv'
+echo $lower->decode('rovwsoiv') . "<br>"; // 'codewars'
 
-echo "<br>";
-echo $c->encode('codewars'); // ('rovwsoiv',
-echo "<br>";
+echo "<br>" . $lower->encode('waffles') . "<br>"; // 'laxxhsj',
+echo $lower->decode('laxxhsj') . "<br>"; // 'waffles',
 
-echo $c->decode('rovwsoiv'); // ('codewars',
-echo "<br>";
-
-echo "<br>";
-echo $c->encode('waffles') . " "; // ('laxxhsj', 
-echo "<br>";
-echo $c->decode('laxxhsj'); // ('waffles', 
-echo "<br>";
-
-echo "<br>";
-echo $c->encode('CODEWARS') . " "; // ('CODEWARS',
-echo $c->decode('CODEWARS'); // ('CODEWARS',
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "<br>";
+echo "<br>" . $lower->encode('CODEWARS') . "<br>"; // 'CODEWARS'
+echo $lower->decode('CODEWARS') . "<br>"; // 'CODEWARS'
 
 
-$b = new VigenèreCipher("PASSWORD", "ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-echo "'" . $b->encode('codewars') . "' "; // ('rovwsoiv',
-echo "'" . $b->decode('rovwsoiv') . "'"; // ('codewars',
+$upper = new VigenèreCipher("PASSWORD", "ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+echo "<br>" . $upper->encode('codewars') . "<br>"; // codewars
+echo $upper->decode('rovwsoiv') . "<br>"; // rovwsoiv
+
+echo  "<br>" . $upper->encode('waffles') . "<br>"; // waffles 
+echo $upper->decode('laxxhsj'); // laxxhsj
 echo "<br>";
 
-echo $b->encode('waffles') . " "; // ('laxxhsj', 
-echo $b->decode('laxxhsj'); // ('waffles', 
-echo "<br>";
-
-echo $b->encode('CODEWARS') . " "; // ('CODEWARS',
-echo $b->decode('CODEWARS'); // ('CODEWARS',
-echo "<br>";
+echo "<br>" . $upper->encode('CODEWARS') . "<br>"; // ROVWSOIV
+echo $upper->decode('CODEWARS') . "<br>"; // NOLMAMAP
