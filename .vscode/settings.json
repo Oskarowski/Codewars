@@ -1,5 +1,9 @@
 {
   "liveServer.settings.port": 5501,
+  // Font family
+  "editor.fontFamily": "'Fira Code','Consolas', 'Courier New', 'monospace'",
+  // Enable font Ligatures
+  "editor.fontLigatures": true,
   "files.associations": {
     "iostream": "cpp",
     "iosfwd": "cpp",
@@ -51,5 +55,9 @@
     "stdexcept": "cpp",
     "streambuf": "cpp",
     "typeinfo": "cpp"
-  }
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8"
+  },
+  "python.analysis.typeCheckingMode": "basic"
 }
